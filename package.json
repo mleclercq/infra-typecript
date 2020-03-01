@@ -1,0 +1,88 @@
+{
+    "name": "@automat-ai/${PROJECT}-infra",
+    "version": "1.0.0",
+    "description": "${PROJECT} infrastructure code",
+    "types": "./dist/index.d.ts",
+    "scripts": {
+        "build": "rm -rf ./dist && tsc --project ./lib/tsconfig.json && cp ../config/* ./dist/",
+        "prepublishOnly": "npm ci && npm run build",
+        "lint": "eslint ./ --ext .ts --ext .tsx --ignore-pattern node_modules",
+        "format": "eslint ./ --ext .ts --ext .tsx --ignore-pattern node_modules --fix"
+    },
+    "files": [
+        "dist/"
+    ],
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com/"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:automat-ai/${PROJECT}.git",
+        "directory": "./infra"
+    },
+    "author": "Automat Technology, Inc",
+    "prettier": {
+        "singleQuote": true,
+        "trailingComma": "all"
+    },
+    "eslintConfig": {
+        "parser": "@typescript-eslint/parser",
+        "extends": [
+            "plugin:@typescript-eslint/recommended",
+            "prettier/@typescript-eslint",
+            "plugin:prettier/recommended"
+        ],
+        "plugins": [
+            "@typescript-eslint"
+        ],
+        "rules": {
+            "react/prop-types": 0,
+            "@typescript-eslint/no-explicit-any": 0,
+            "@typescript-eslint/explicit-function-return-type": [
+                0,
+                {
+                    "allowExpressions": true,
+                    "allowTypedFunctionExpressions": true
+                }
+            ],
+            "@typescript-eslint/no-var-requires": 0,
+            "@typescript-eslint/no-non-null-assertion": 1,
+            "@typescript-eslint/no-object-literal-type-assertion": 0,
+            "@typescript-eslint/no-empty-interface": 0,
+            "@typescript-eslint/ban-ts-ignore": 1,
+            "@typescript-eslint/explicit-member-accessibility": [
+                1,
+                {
+                    "accessibility": "no-public"
+                }
+            ],
+            "@typescript-eslint/camelcase": [
+                2,
+                {
+                    "properties": "never"
+                }
+            ],
+            "@typescript-eslint/no-unused-vars": [
+                1,
+                {
+                    "vars": "all",
+                    "args": "after-used",
+                    "ignoreRestSiblings": false
+                }
+            ]
+        }
+    },
+    "devDependencies": {
+        "@types/node": "^8.0.0",
+        "@typescript-eslint/eslint-plugin": "2.3.1",
+        "@typescript-eslint/parser": "2.6.1",
+        "eslint": "6.6.0",
+        "eslint-config-prettier": "6.5.0",
+        "eslint-plugin-prettier": "3.1.1",
+        "prettier": "1.19.1",
+        "typescript": "3.7.2"
+    },
+    "dependencies": {
+        "@automat-ai/pulumi-lib": "^1.2.0"
+    }
+}

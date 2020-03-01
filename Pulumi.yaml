@@ -1,0 +1,10 @@
+name: ${PROJECT}
+description: ${DESCRIPTION}
+runtime: nodejs
+template:
+  description: Template for dev-cluster playground
+  important: true
+  config:
+    kubernetes:context:
+      description: Do not change me
+      default: this-is-not-the-cluster-you-re-looking-for
