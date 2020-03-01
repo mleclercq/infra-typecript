@@ -2,7 +2,7 @@ name: ${PROJECT}
 description: ${DESCRIPTION}
 runtime: nodejs
 template:
-  description: Template for dev-cluster playground
+  description: My application infra
   important: true
   config:
     kubernetes:context:
