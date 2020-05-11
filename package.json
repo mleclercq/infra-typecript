@@ -83,6 +83,6 @@
         "typescript": "3.7.2"
     },
     "dependencies": {
-        "@automat-ai/pulumi-lib": "^1.2.0"
+        "@automat-ai/pulumi-lib": "^1.2.27"
     }
 }
