@@ -1,4 +1,4 @@
-import * as pulumi from "@pulumi/pulumi";
-import * as automat from '@automat-ai/pulumi-lib';
+import * as pulumi from '@pulumi/pulumi';
+import * as salesfloor from '@salesfloor/pulumi-lib';
 
 // Infrastructure code goes here
